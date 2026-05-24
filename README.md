@@ -1,6 +1,6 @@
-# Proyecto Final FIS - Tienda de Camisetas Personalizadas (T-Prints)
+# Proyecto Final Patrones - Tienda de Totebags Personalizadas (ToT-e Desing)
 
-Esta plataforma es una aplicación web de comercio electrónico que permite la venta y personalización de camisetas con estampas diseñadas por diferentes artistas. El sistema cuenta con tres roles principales: **Cliente**, **Artista** y **Administrador**.
+Esta plataforma es una aplicación web de comercio electrónico que permite la venta y personalización de Totebags con estampas diseñadas por diferentes artistas. El sistema cuenta con tres roles principales: **Cliente**, **Artista** y **Administrador**.
 
 El proyecto está estructurado con un **Backend** en Python (Flask), un **Frontend** dinámico en HTML, CSS y JavaScript (con Tailwind CSS), y una base de datos **MySQL**.
 
