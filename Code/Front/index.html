@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>T-Prints</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <header
+            class="bg-white border-b px-20 py-6 flex items-center justify-between"
+        >
+            <div class="text-lg font-bold">T-Prints</div>
+            <nav class="hidden md:flex gap-4 text-sm">
+                <a href="#" class="hover:text-red-500">Home</a>
+                <a href="#" class="hover:text-red-500">About</a>
+                <a href="register.html" class="hover:text-red-500"
+                    >Sign Up</a
+                >
+            </nav>
+
+            <!-- Search bar and cart icon -->
+            <div class="flex items-center gap-5">
+                <div
+                    dir="ltr"
+                    class="bg-gray-100 px-3 py-1 rounded-md flex items-center"
+                >
+                    <input
+                        type="text"
+                        placeholder="What are you looking for?"
+                        class="bg-transparent outline-none text-sm w-48"
+                    />
+                    <span class="text-sm ml-2 cursor-pointer" id="search-bar"
+                        >🔍</span
+                    >
+                </div>
+                <a href="carrito.html">🛒</a>
+
+                <div class="relative">
+                    <!-- Ícono de perfil -->
+                    <i
+                        id="menu-button"
+                        class="fas fa-user-circle text-2xl text-gray-700 cursor-pointer"
+                    ></i>
+
+                    <!-- Menú desplegable -->
+                    <div
+                        id="profile-dropdown"
+                        class="hidden absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50"
+                    >
+                        <ul class="py-2">
+                            <li
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                id="perfil"
+                            >
+                                Mi perfil
+                            </li>
+                            <li
+                                id="cart"
+                                onclick="window.location.href='carrito.html'"
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            >
+                                Carrito
+                            </li>
+                            <li
+                                id="logout"
+                                onclick="window.location.href='login.html'"
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            >
+                                Cerrar sesión
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- SubNavigation bar -->
+        <nav class="bg-gray-50 border-b px-8 py-2">
+            <ul class="flex justify-center gap-6 text-sm font-medium">
+                <li>
+                    <p
+                        class="cursor-pointer hover:text-red-500"
+                        onclick="window.location.href='index.html'"
+                    >
+                        Camisas
+                    </p>
+                </li>
+                <li>
+                    <p
+                        class="cursor-pointer hover:text-red-500"
+                        onclick="window.location.href='estampas.html'"
+                    >
+                        Estampas
+                    </p>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+
+        <main class="container flex flex-col items-center px-6 py-8">
+            <h1 class="text-3xl font-bold mb-14 text-center">Productos</h1>
+
+            <div
+                id="products-container"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+                <!-- Aquí se generarán los productos dinámicamente -->
+            </div>
+        </main>
+
+        <!-- Modal for product selection -->
+        <dialog
+            id="product-modal"
+            class="rounded-md p-0 w-full max-w-md backdrop:bg-black/50"
+        >
+            <form
+                method="dialog"
+                class="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto"
+            >
+                <!-- Botón cerrar -->
+                <button
+                    type="button"
+                    id="close-modal-btn"
+                    class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl"
+                >
+                    &times;
+                </button>
+
+                <img
+                    id="modal-img"
+                    src=""
+                    alt="Producto"
+                    class="w-full h-48 object-contain mb-4"
+                />
+                <h2 id="modal-title" class="text-xl font-bold mb-2">Camisa</h2>
+
+                <label class="block mb-2 font-medium">Cantidad:</label>
+                <input
+                    type="number"
+                    id="modal-quantity"
+                    min="1"
+                    value="1"
+                    class="w-full border p-2 mb-4"
+                />
+
+                <button
+                    type="button"
+                    id="add-to-cart-modal-btn"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full"
+                >
+                    Agregar al carrito
+                </button>
+            </form>
+        </dialog>
+        <script src="./js/auth.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+    <!-- Footer -->
+    <footer
+        class="bg-black text-white border-t px-6 py-8 text-sm text-center text-gray-500"
+    >
+        &copy; 2025 UD reserved.
+    </footer>
+</html>

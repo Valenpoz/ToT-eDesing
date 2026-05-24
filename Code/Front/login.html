@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-gray-100 text-gray-800">
+        <!-- Navbar -->
+        <header
+            class="bg-white border-b px-20 py-6 flex items-center justify-between"
+        >
+            <div class="text-lg font-bold">T-Prints</div>
+            <nav class="hidden md:flex gap-4 text-sm">
+                <a href="index.html" class="hover:text-red-500">Home</a>
+                <a href="#" class="hover:text-red-500">About</a>
+                <a href="register.html" class="hover:text-red-500">Sign Up</a>
+            </nav>
+            <div class="bg-gray-100 px-3 py-1 rounded-md flex items-center">
+                <input
+                    type="text"
+                    placeholder="What are you looking for?"
+                    class="bg-transparent outline-none text-sm w-48"
+                />
+                <span class="text-sm ml-2 cursor-pointer" id="search-bar"
+                    >🔍</span
+                >
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main
+            class="min-h-[calc(100vh-8rem)] flex items-center justify-center px-4 py-8 bg-white"
+        >
+            <div>
+                <img
+                    src="images/carritoInici.png"
+                    alt="img"
+                    width="400"
+                    height="750"
+                />
+            </div>
+            <div class="bg-white p-8 rounded-lg w-full max-w-md">
+                <h2 class="text-4xl font-semibold mb-6 text-center">Login</h2>
+                <form id="loginForm" class="space-y-6">
+                    <div>
+                        <input
+                            id="email"
+                            type="text"
+                            placeholder="Email"
+                            class="w-full border-b border-gray-300 focus:outline-none focus:border-red-500 py-3 text-sm"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <input
+                            id="password"
+                            type="password"
+                            placeholder="Password"
+                            class="w-full border-b border-gray-300 focus:outline-none focus:border-red-500 py-3 text-sm"
+                            required
+                        />
+                    </div>
+                    <div
+                        class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4"
+                    >
+                        <button
+                            type="submit"
+                            class="bg-red-500 hover:bg-red-600 text-white py-3 px-9 rounded w-full sm:w-auto text-sm"
+                        >
+                            Log In
+                        </button>
+                        <a href="#" class="text-red-500 text-sm hover:underline"
+                            >Forget Password?</a
+                        >
+                    </div>
+                    <p id="message"></p>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer
+            class="bg-black text-white border-t px-6 py-8 text-sm text-center text-gray-500"
+        >
+            &copy; 2025 UD reserved.
+        </footer>
+        <script src="./js/login.js"></script>
+    </body>
+</html>

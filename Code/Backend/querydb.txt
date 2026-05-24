@@ -1,0 +1,98 @@
+CREATE TABLE roles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    correo VARCHAR(255) UNIQUE NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
+    rol_id INT NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (rol_id) REFERENCES roles(id)
+);
+
+CREATE TABLE artistas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT UNIQUE NOT NULL,
+    biografia TEXT,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE estampas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(255) NOT NULL,
+    descripcion TEXT,
+    artista_id INT NOT NULL,
+    fecha_subida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estado VARCHAR(100),
+    FOREIGN KEY (artista_id) REFERENCES artistas(id)
+);
+
+CREATE TABLE camisetas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    talla VARCHAR(10) NOT NULL,
+    color VARCHAR(50),
+    material VARCHAR(100),
+    precio DECIMAL(10,2),
+    stock INT DEFAULT 0
+);
+
+CREATE TABLE camisetas_personalizadas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    camiseta_id INT NOT NULL,
+    estampa_id INT NOT NULL,
+    FOREIGN KEY (camiseta_id) REFERENCES camisetas(id),
+    FOREIGN KEY (estampa_id) REFERENCES estampas(id)
+);
+
+CREATE TABLE carrito (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT UNIQUE NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE items_carrito (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    carrito_id INT NOT NULL,
+    camiseta_personalizada_id INT NOT NULL,
+    cantidad INT DEFAULT 1,
+    FOREIGN KEY (carrito_id) REFERENCES carrito(id),
+    FOREIGN KEY (camiseta_personalizada_id) REFERENCES camisetas_personalizadas(id)
+);
+
+CREATE TABLE metodos_pago (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tipo VARCHAR(100),
+    descripcion TEXT
+);
+
+CREATE TABLE pedidos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10,2),
+    metodo_pago_id INT,
+    estado VARCHAR(100),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (metodo_pago_id) REFERENCES metodos_pago(id)
+);
+
+CREATE TABLE detalles_pedido (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    pedido_id INT NOT NULL,
+    camiseta_personalizada_id INT NOT NULL,
+    cantidad INT DEFAULT 1,
+    subtotal DECIMAL(10,2),
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
+    FOREIGN KEY (camiseta_personalizada_id) REFERENCES camisetas_personalizadas(id)
+);
+
+
+#creacion de roles
+INSERT INTO roles (id, nombre) VALUES
+(1, 'cliente'),
+(2, 'artista'),
+(3, 'admin');

@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+
+.banner {
+    width: 100%; 
+    height: 50%; 
+    max-height: 150px; 
+    object-fit: cover; 
+    display: block; 
+  }
+
+.nav {
+  background: #eee;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.nav-item {
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+
+}
+
+a:hover{
+  color: rgb(230, 31, 31); 
+  background-color: #d6d6d6; 
+  border-radius:10px
+}
+
+.cart-icon {
+  font-size: 24px;
+}
+
+.search-bar {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+.title {
+  margin: 15px 0;
+  font-size: 28px;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.sidebar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mockup-img {
+  max-width: 80%;
+  height: auto;
+}
+
+.products {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.product-card {
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.products {
+  margin-bottom: 20px;
+}
+
+.products button {
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cart-left {
+  flex: 2;
+}
+
+.cart-right {
+  flex: 1;
+  margin-left: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+.cart-buttons {
+  margin-top: 10px;
+}
+
+.cart-buttons button {
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.cart-total {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.cart-total p {
+  margin: 5px 0;
+}
+
+.checkout {
+  margin-top: 10px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Modal styling for better centering and backdrop */
+#product-modal {
+  margin: auto;
+  border: none;
+  background: transparent;
+  padding: 1rem;
+}
+
+#product-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
