@@ -8,7 +8,7 @@ def get_connection():
             port=3306,
             database='tienda_camisetas',
             user='root',
-            password='password1'
+            password='12345'
         )
         return connection
     except Error as e:

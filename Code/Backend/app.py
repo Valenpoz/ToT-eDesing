@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from services import user_service, carrito_service, pedido_service, camiseta_service, estampa_service
+from Code.Backend.services import bolsa_service
+from services import user_service, carrito_service, pedido_service, estampa_service
 
 app = Flask(__name__)
 CORS(app)
@@ -82,13 +83,13 @@ def crear_estampa():
 
 # === CAMISETAS ===
 @app.route("/camisetas", methods=["GET"])
-def get_camisetas():
-    return jsonify(camiseta_service.listar_camisetas())
+def get_bolsas():
+    return jsonify(bolsa_service.listar_bolsas())
 
 @app.route("/camisetas", methods=["POST"])
 def crear_camiseta():
     data = request.get_json()
-    return jsonify(camiseta_service.registrar_camiseta(
+    return jsonify(bolsa_service.registrar_bolsa(
         data["talla"],
         data.get("color", ""),
         data.get("material", ""),
