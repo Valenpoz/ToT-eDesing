@@ -63,7 +63,7 @@ Tienes dos maneras de correr tu base de datos MySQL. Elige la que prefieras:
    connection = mysql.connector.connect(
        host='localhost',
        port=3306,
-       database='tienda_camisetas',
+       database='tienda_totebags',
        user='TU_USUARIO',       # Ej: 'root'
        password='TU_CONTRASEÑA'  # Ej: 'password1'
    )
@@ -111,7 +111,7 @@ Si prefieres no instalar MySQL local, puedes usar Docker Desktop:
    ```
 
 5. **Inicializa la base de datos automáticamente**:
-   Para ahorrarte tener que copiar y pegar comandos SQL en un cliente externo, ejecuta nuestro script automatizado que creará la base de datos `tienda_camisetas`, todas sus tablas, llaves foráneas y roles por defecto:
+   Para ahorrarte tener que copiar y pegar comandos SQL en un cliente externo, ejecuta nuestro script automatizado que creará la base de datos `tienda_totebags` (si no existe), todas sus tablas, llaves foráneas, roles y usuarios de prueba por defecto:
    ```bash
    python init_db.py
    ```
@@ -161,9 +161,9 @@ Para facilitar la evaluación y navegación rápida del proyecto sin necesidad d
 
 ## 💡 Funcionalidades del Sistema
 
-* **Catálogo de Camisetas**: Visualiza todas las prendas con sus respectivos tallajes, precios y stock disponible.
-* **Personalización**: Selecciona una camiseta y agrégale una estampa artística autorizada para crear un producto único.
-* **Carrito de Compras**: Administra las cantidades, elimina prendas personalizadas y procesa la compra vinculando tu usuario.
+* **Catálogo de Totebags**: Visualiza todas las totebags con sus respectivos tallajes, precios y stock disponible.
+* **Personalización**: Selecciona una totebags y agrégale una estampa artística autorizada para crear un producto único.
+* **Carrito de Compras**: Administra las cantidades, elimina totebags personalizadas y procesa la compra vinculando tu usuario.
 * **Sistema de Roles**: El backend restringe accesos y gestiona los permisos de manera controlada según el tipo de usuario.
 
 ---

@@ -1,0 +1,49 @@
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# =====================
+# Entorno Virtual
+# =====================
+venv/
+.venv/
+env/
+ENV/
+
+# =====================
+# Flask / Pytest
+# =====================
+instance/
+.pytest_cache/
+*.log
+
+# =====================
+# Base de Datos local
+# =====================
+*.db
+*.sqlite3
+
+# =====================
+# Variables de entorno
+# =====================
+.env
+.env.*
+
+# =====================
+# IDE / Editores
+# =====================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =====================
+# Sistema Operativo
+# =====================
+.DS_Store
+Thumbs.db

@@ -78,18 +78,18 @@ async function obtenerDatos() {
 }
 
 const products = [
-    { id: 0, name: "Camisa Blanca", price: 50000, img: "images/camisas/camisaBlanca.png", talla: "M", stock: 10 },
-    { id: 1, name: "Camisa Blanca manga Larga", price: 60000, img: "images/camisas/camisaBlanca_MangaLarga.png", talla: "L", stock: 5 },
-    { id: 2, name: "Camisa Negra", price: 70000, img: "images/camisas/camisaNegra.png", talla: "S", stock: 8 },
-    { id: 3, name: "Camisa Negra manga Larga", price: 80000, img: "images/camisas/camisaNegra_mangaLarga.png", talla: "XL", stock: 3 },
-    { id: 4, name: "Camisa Azul", price: 90000, img: "images/camisas/camisaAzul.png", talla: "M", stock: 12 },
-    { id: 5, name: "Camisa Rosa", price: 100000, img: "images/camisas/camisaRosa.png", talla: "L", stock: 7 },
-    { id: 6, name: "Camisa Gris", price: 110000, img: "images/camisas/camisaGris.png", talla: "S", stock: 4 },
-    { id: 7, name: "Camisa Verde", price: 110000, img: "images/camisas/camisaVerde.png", talla: "M", stock: 20},
-    { id: 8, name: "Camisa Tipo Polo Rosa", price: 300000, img: "images/camisas/camisaRosa_TipoPolo.png", talla: "M", stock: 25},
-    { id: 9, name: "Camisa Tipo Polo Cafe", price: 300000, img: "images/camisas/camisaCafe_TipoPolo.png", talla: "L", stock: 20},
-    { id: 10, name: "Camisa Tipo Polo Azul", price: 300000, img: "images/camisas/camisaAzul_TipoPolo.png", talla: "XL", stock: 22},
-    { id: 12, name: "Camisa Tipo Polo Morada", price: 300000, img: "images/camisas/camisaMorada_TipoPolo.png", talla: "M", stock: 20},
+    { id: 0, name: "Totebag Grande Blanca", price: 80000, img: "images/totebag/toteGrandeBlanca.png", talla: "Grande", stock: 10 },
+    { id: 1, name: "Totebag De Lona", price: 25000, img: "images/totebag/toteDeLona.png", talla: "Pequeña", stock: 5 },
+    { id: 2, name: "Totebag Grande Lima", price: 70000, img: "images/totebag/toteGrandeLima.png", talla: "Grande", stock: 8 },
+    { id: 3, name: "Totebag Grande RosaBlue", price: 90000, img: "images/totebag/toteGrandeRosaBlue.png", talla: "Grande", stock: 3 },
+    { id: 4, name: "Totebag Grande Verde", price: 70000, img: "images/totebag/toteGrandeVerde.png", talla: "Media", stock: 12 },
+    { id: 5, name: "Totebag Grande Roja", price: 50000, img: "images/totebag/toteGrandeRoja.png", talla: "Media", stock: 7 },
+    { id: 6, name: "Totebag Pequeña Azul", price: 30000, img: "images/totebag/totepequeAzul.png", talla: "Pequeña", stock: 4 },
+    { id: 7, name: "Totebag Pequeña Cian", price: 25000, img: "images/totebag/totePequeCian.png", talla: "Pequeña", stock: 20},
+    { id: 8, name: "Totebag Pequeña Negra", price: 30000, img: "images/totebag/totepequeNegra.png", talla: "Media", stock: 25},
+    { id: 9, name: "Totebag Pequeña Roja", price: 30000, img: "images/totebag/totePequeRoja.png", talla: "Pequeña", stock: 20},
+    { id: 10, name: "Totebag Grande Negra", price: 500000, img: "images/totebag/toteNegraGrande.png", talla: "Grande", stock: 22},
+    { id: 12, name: "Totebag Grande Blanca y Rojo", price: 50000, img: "images/totebag/toteGrandeBlancaRoja.png", talla: "Grande", stock: 20},
 ];
 
 
