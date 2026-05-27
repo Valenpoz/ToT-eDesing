@@ -9,7 +9,7 @@ def get_connection():
             port=3306,
             database='tienda_totebags',
             user='root',
-            password='12345'
+            password='password1'
         )
         return connection
     except Error as e:
@@ -20,9 +20,9 @@ def get_connection():
                 print("La base de datos 'tienda_totebags' no existe. Intentando crearla...")
                 temp_connection = mysql.connector.connect(
                     host='localhost',
-                    port=3306,
+                    port=3307,
                     user='root',
-                    password='password1'
+                    password='rootpass'
                 )
                 cursor = temp_connection.cursor()
                 cursor.execute("CREATE DATABASE IF NOT EXISTS tienda_totebags")
@@ -32,10 +32,10 @@ def get_connection():
                 # Volvemos a intentar la conexión con la base de datos ya creada
                 connection = mysql.connector.connect(
                     host='localhost',
-                    port=3306,
+                    port=3307,
                     database='tienda_totebags',
                     user='root',
-                    password='password1'
+                    password='rootpass'
                 )
                 print("Base de datos 'tienda_totebags' creada e inicializada con éxito.")
                 return connection

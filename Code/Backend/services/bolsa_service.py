@@ -1,4 +1,4 @@
-from Code.Backend.CRUD import bolsa
+from CRUD import bolsa
 
 def listar_bolsas():
     return bolsa.get_all_bolsas()

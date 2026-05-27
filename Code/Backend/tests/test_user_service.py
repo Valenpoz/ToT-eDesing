@@ -43,4 +43,4 @@ def test_login_user_failure(mock_user):
     result = user_service.login_user("juan@mail.com", "clave")
 
     assert result["success"] is False
-    assert "no encontrado" in result["message"]
+    assert "incorrectos" in result["message"]
