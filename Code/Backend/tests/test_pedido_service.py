@@ -36,3 +36,36 @@ def test_obtener_detalles_de_pedido(mock_pedido_db):
 
     assert detalles == [{"detalle": "camiseta"}]
     mock_pedido_db.obtener_detalles_pedido.assert_called_once_with(123)
+
+from services.pedido_builder import PedidoBuilder
+
+def test_pedido_builder_success():
+    builder = PedidoBuilder()
+    pedido = (builder
+              .para_usuario(10)
+              .con_metodo_pago(2)
+              .con_estado("completado")
+              .con_fecha(datetime(2026, 5, 27, 10, 0, 0))
+              .agregar_item(1, 2, 15.0)
+              .agregar_item(2, 1, 20.0)
+              .build())
+
+    assert pedido.usuario_id == 10
+    assert pedido.metodo_pago_id == 2
+    assert pedido.estado == "completado"
+    assert pedido.fecha == "2026-05-27 10:00:00"
+    assert pedido.total == 35.0  # Suma de subtotales: 15.0 + 20.0
+    assert len(pedido.items) == 2
+
+def test_pedido_builder_missing_usuario():
+    builder = PedidoBuilder()
+    builder.con_metodo_pago(2)
+    with pytest.raises(ValueError, match="El pedido requiere un usuario_id válido."):
+        builder.build()
+
+def test_pedido_builder_missing_metodo_pago():
+    builder = PedidoBuilder()
+    builder.para_usuario(10)
+    with pytest.raises(ValueError, match="El pedido requiere un metodo_pago_id válido."):
+        builder.build()
+

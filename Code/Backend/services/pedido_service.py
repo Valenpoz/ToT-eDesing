@@ -1,4 +1,5 @@
 from CRUD import pedido as pedido_db
+from services.pedido_builder import PedidoBuilder
 from datetime import datetime
 
 def registrar_pedido(usuario_id, metodo_pago_id, items):
@@ -8,14 +9,30 @@ def registrar_pedido(usuario_id, metodo_pago_id, items):
     - cantidad
     - subtotal
     """
-
-    fecha = datetime.now()
-    total = sum(item["subtotal"] for item in items)
-    estado = "pendiente"  # o "pagado", según lo que definas
-
-    pedido_id = pedido_db.crear_pedido(usuario_id, total, metodo_pago_id, estado, fecha)
+    builder = (PedidoBuilder()
+               .para_usuario(usuario_id)
+               .con_metodo_pago(metodo_pago_id)
+               .con_estado("pendiente")
+               .con_fecha(datetime.now()))
 
     for item in items:
+        builder.agregar_item(
+            camiseta_personalizada_id=item["camiseta_personalizada_id"],
+            cantidad=item["cantidad"],
+            subtotal=item["subtotal"]
+        )
+
+    pedido_objeto = builder.build()
+
+    pedido_id = pedido_db.crear_pedido(
+        pedido_objeto.usuario_id,
+        pedido_objeto.total,
+        pedido_objeto.metodo_pago_id,
+        pedido_objeto.estado,
+        pedido_objeto.fecha
+    )
+
+    for item in pedido_objeto.items:
         pedido_db.agregar_detalle_pedido(
             pedido_id,
             item["camiseta_personalizada_id"],
@@ -32,12 +49,22 @@ def obtener_detalles_de_pedido(pedido_id):
     return pedido_db.obtener_detalles_pedido(pedido_id)
 
 def crear_nuevo_pedido(data):
-    usuario_id = data["usuario_id"]
-    total = data["total"]
-    metodo_pago_id = data["metodo_pago_id"]
-    estado = data.get("estado", "pendiente")
-    fecha = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    pedido_db.crear_pedido(usuario_id, total, metodo_pago_id, estado, fecha)
+    builder = (PedidoBuilder()
+               .para_usuario(data["usuario_id"])
+               .con_metodo_pago(data["metodo_pago_id"])
+               .con_total(data.get("total"))
+               .con_estado(data.get("estado", "pendiente"))
+               .con_fecha(datetime.now()))
+
+    pedido_objeto = builder.build()
+
+    pedido_db.crear_pedido(
+        pedido_objeto.usuario_id,
+        pedido_objeto.total,
+        pedido_objeto.metodo_pago_id,
+        pedido_objeto.estado,
+        pedido_objeto.fecha
+    )
     return {"message": "Pedido creado exitosamente", "success": True}
 
 def obtener_pedidos_usuario(usuario_id):
