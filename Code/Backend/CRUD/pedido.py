@@ -47,3 +47,25 @@ def obtener_detalles_pedido(pedido_id):
     cursor.close()
     conn.close()
     return detalles
+
+def actualizar_estado_pedido(pedido_id, nuevo_estado):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        "UPDATE pedidos SET estado = %s WHERE id = %s",
+        (nuevo_estado, pedido_id)
+    )
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+def obtener_pedido_por_id(pedido_id):
+    conn = get_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM pedidos WHERE id = %s", (pedido_id,))
+    pedido = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    return pedido
+
+
