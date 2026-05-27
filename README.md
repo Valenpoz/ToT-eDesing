@@ -161,9 +161,9 @@ Para facilitar la evaluación y navegación rápida del proyecto sin necesidad d
 
 ## 💡 Funcionalidades del Sistema
 
-* **Catálogo de Camisetas**: Visualiza todas las prendas con sus respectivos tallajes, precios y stock disponible.
-* **Personalización**: Selecciona una camiseta y agrégale una estampa artística autorizada para crear un producto único.
-* **Carrito de Compras**: Administra las cantidades, elimina prendas personalizadas y procesa la compra vinculando tu usuario.
+* **Catálogo de Totebags**: Visualiza todas las totebags con sus respectivos tallajes, precios y stock disponible.
+* **Personalización**: Selecciona una totebags y agrégale una estampa artística autorizada para crear un producto único.
+* **Carrito de Compras**: Administra las cantidades, elimina totebags personalizadas y procesa la compra vinculando tu usuario.
 * **Sistema de Roles**: El backend restringe accesos y gestiona los permisos de manera controlada según el tipo de usuario.
 
 ---
