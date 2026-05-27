@@ -11,7 +11,7 @@ class UserFactory():
                         (nombre, correo, contrasena,"Admin")
                     )
                 connection.commit()
-            connection.close()
+                connection.close()
             return True
             if rol_id ==1:
                 #crearDiseñador
@@ -20,8 +20,8 @@ class UserFactory():
                         "INSERT INTO usuarios (nombre, correo, contrasena, rol_id, fecha_creacion) VALUES (%s, %s, %s, %s, NOW())",
                         (nombre, correo, contrasena,"Diseñador")
                     )
-                    connection.commit()
-            connection.close()
+                connection.commit()
+                connection.close()
             return True                
             if rol_id ==2:
                 #crearCliente
@@ -30,8 +30,8 @@ class UserFactory():
                         "INSERT INTO usuarios (nombre, correo, contrasena, rol_id, fecha_creacion) VALUES (%s, %s, %s, %s, NOW())",
                         (nombre, correo, contrasena,"Cliente")
                     )
-                    connection.commit()
-            connection.close()
+                connection.commit()
+                connection.close()
             return True    
         except Exception as e:
             print("Error al crear usuario:", e)
