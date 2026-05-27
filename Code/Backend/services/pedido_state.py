@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
-from CRUD import pedido as pedido_db
+from services.db_proxy import MockablePedidoDbProxy
+
+pedido_db = MockablePedidoDbProxy()
 
 class EstadoPedido(ABC):
     """Interfaz abstracta para definir el comportamiento de cada estado del pedido."""

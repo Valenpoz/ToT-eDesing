@@ -71,19 +71,23 @@ def pagar_pedido(pedido_id):
     data = request.get_json() or {}
     tipo_pago = data.get("tipo_pago", "efectivo")
     detalles  = data.get("detalles", {})
-    return jsonify(pedido_service.pagar_pedido(pedido_id, tipo_pago, detalles))
+    usuario_rol = request.headers.get("X-User-Role", "cliente")
+    return jsonify(pedido_service.pagar_pedido(pedido_id, tipo_pago, detalles, usuario_rol))
 
 @app.route("/pedido/<int:pedido_id>/despachar", methods=["POST"])
 def despachar_pedido(pedido_id):
-    return jsonify(pedido_service.despachar_pedido(pedido_id))
+    usuario_rol = request.headers.get("X-User-Role", "cliente")
+    return jsonify(pedido_service.despachar_pedido(pedido_id, usuario_rol))
 
 @app.route("/pedido/<int:pedido_id>/entregar", methods=["POST"])
 def entregar_pedido(pedido_id):
-    return jsonify(pedido_service.entregar_pedido(pedido_id))
+    usuario_rol = request.headers.get("X-User-Role", "cliente")
+    return jsonify(pedido_service.entregar_pedido(pedido_id, usuario_rol))
 
 @app.route("/pedido/<int:pedido_id>/cancelar", methods=["POST"])
 def cancelar_pedido(pedido_id):
-    return jsonify(pedido_service.cancelar_pedido(pedido_id))
+    usuario_rol = request.headers.get("X-User-Role", "cliente")
+    return jsonify(pedido_service.cancelar_pedido(pedido_id, usuario_rol))
 
 # === ESTAMPAS ===
 @app.route("/estampas", methods=["GET"])

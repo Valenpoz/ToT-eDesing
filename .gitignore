@@ -47,3 +47,6 @@ instance/
 # =====================
 .DS_Store
 Thumbs.db
+/Code/Backend/services/__pycache__
+/Code/Backend/__pycache__
+/Code/Backend/CRUD/__pycache__
