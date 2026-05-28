@@ -50,3 +50,16 @@ Thumbs.db
 /Code/Backend/services/__pycache__
 /Code/Backend/__pycache__
 /Code/Backend/CRUD/__pycache__
+Code/Backend/venv/Lib/site-packages/_distutils_hack/__pycache__/__init__.cpython-311.pyc
+*.pyc
+*.pyc
+/Code/Backend/venv/Lib/site-packages/blinker/__pycache__
+/Code/Backend/venv/Lib/site-packages/blinker
+Code/Backend/venv/Lib/site-packages/werkzeug/wrappers/__pycache__/response.cpython-311.pyc
+*.pyc
+*.pyc
+/Code
+/Code/Backend/services/__pycache__
+/Code/Backend/venv/Lib/site-packages/_distutils_hack/__pycache__
+Code/Backend/venv/Lib/site-packages/_distutils_hack/__pycache__/__init__.cpython-311.pyc
+*.pyc

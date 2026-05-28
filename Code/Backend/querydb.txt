@@ -93,11 +93,6 @@ CREATE TABLE detalles_pedido (
 
 #creacion de roles
 INSERT INTO roles (id, nombre) VALUES
-<<<<<<< HEAD
-(2, 'cliente'),
-(1, 'artista'),
-(0, 'admin');
-=======
 (1, 'cliente'),
 (2, 'artista'),
 (3, 'admin');
@@ -111,4 +106,4 @@ INSERT INTO usuarios (id, nombre, correo, contrasena, rol_id) VALUES
 # Asociar el artista de prueba
 INSERT INTO artistas (usuario_id, biografia) VALUES
 (3, 'Biografía de artista de prueba.');
->>>>>>> origin
+
