@@ -17,7 +17,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
 
 ---
 
-## 📂 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```text
 Proyecto-Final-FIS/
@@ -48,7 +48,7 @@ Proyecto-Final-FIS/
 
 ---
 
-## 🚀 Guía de Instalación y Ejecución Paso a Paso
+##  Guía de Instalación y Ejecución Paso a Paso
 
 Sigue estos pasos detallados para configurar y levantar todo el sistema en tu máquina local:
 
@@ -159,7 +159,7 @@ Para facilitar la evaluación y navegación rápida del proyecto sin necesidad d
 
 ---
 
-## 💡 Funcionalidades del Sistema
+##  Funcionalidades del Sistema
 
 * **Catálogo de Totebags**: Visualiza todas las totebags con sus respectivos tallajes, precios y stock disponible.
 * **Personalización**: Selecciona una totebags y agrégale una estampa artística autorizada para crear un producto único.
@@ -168,7 +168,7 @@ Para facilitar la evaluación y navegación rápida del proyecto sin necesidad d
 
 ---
 
-## ⚡ Solución de Problemas Comunes
+##  Solución de Problemas Comunes
 
 * **Error de conexión con la base de datos (`ConnectionRefusedError`)**:
   Asegúrate de que tu servidor MySQL local o tu contenedor de Docker esté activo y corriendo en el mismo puerto configurado en `db.py`.
